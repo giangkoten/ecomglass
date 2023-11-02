@@ -1,0 +1,244 @@
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 2%;
+}
+
+.home-anh1 {
+    max-width: 50%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 24px 24px 24px 24px;
+}
+
+.home-anh2 { 
+    max-width: 25%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 24px 24px 24px 24px;
+}
+
+.list-product{
+    background-image: url(https://kinhmatanna.com//wp-content/uploads/2022/07/bg-100.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 4% 6%;
+    height: 400px;
+    margin-top: 5%;
+    text-align: center;
+}
+
+.list-all {
+    height: 1000px;
+}
+
+.list-trend{
+    margin-bottom: 2%;
+}
+
+.list-hot{
+    color: white;
+    font-family:  Sans-serif;
+    font-size: 16px;
+     font-weight: 400;
+    line-height: 1.4em;
+}
+
+.list-new{
+    color: white;
+    font-family:  Sans-serif;
+    font-size: 33px;
+    font-weight: 700;
+    line-height: 1.4em;
+}
+.list-card{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 33px;
+}
+
+.cardimage{
+    height: 270px
+}
+
+.xem{
+    font-family:  Sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.4em;
+    background-color: black;
+    border-style: solid;
+    border-width: 1px 1px 1px 1px;
+    border-radius: 8px 8px 8px 8px;
+    color: white;
+    height: 50px;
+    width: 120px;
+    margin-top: 3%;
+}
+
+.elementor{
+        color: white;
+        font-family:  Sans-serif;
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 1.4em;
+       font-style: italic;
+}
+.Choose-Glass{
+height: 50px;
+width: 200px;
+background-color: #81c8c2;
+line-height: 50px;
+border-radius: 20px;
+text-align: center;
+cursor: pointer;
+
+}
+
+.FIT{
+    color:black;
+    font-size: 35px;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 1.4em;
+    
+}
+.FIT-BG{
+    background-image: url("https://kinhmatanna.com/wp-content/uploads//2022/08/Vector-3-1.svg");
+object-fit: cover;
+background-repeat: no-repeat;
+}
+.container-pit {
+    padding: 3% 7%;
+}
+
+.container-khung {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-top: 3%;
+}
+
+.image-pit {
+    flex: 0 0 auto;
+    width: 50%;
+}
+
+.image-khung {
+    width: 100%;
+    height: 411px;
+    object-fit: cover;
+    border-radius: 32px 32px 32px 32px;
+}
+
+.text-container {
+    width: 50%;
+    text-align: center;
+}
+
+.title-khung {
+    color: #81c8c2;
+        font-family:  Sans-serif;
+        font-size: 32px;
+        font-weight: 700;
+        line-height: 1.4em;
+}
+.title-choose-img{
+    margin: 0 auto;
+    width: 80px;
+    height: 80px;
+    background-color: #81c8c2;
+    border-radius: 50%;
+}
+.description-khung {
+    color:black;
+        font-family: monospace;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 1.4em;
+}
+
+.container-add{
+    padding: 3% 7%;
+}
+
+.addressss{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.addressss button{
+    width: 175px;
+    height: 45px;
+    font-family:  Sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.4em;
+    background-color: black;
+    color: white;
+    border-radius: 8px 8px 8px 8px;
+    border: none;
+}
+
+.image-add{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    margin-top: 3%;
+}
+
+.large-image{
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+}
+.small-image{
+    width: 70%;
+    height: 600px;
+    object-fit: cover;
+}
+
+.container-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 7%
+}
+
+.container-text1 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 5%;
+}
+
+.container-text1 h2 {
+    color: black;
+        font-size: 35px;
+        font-weight: 700;
+        text-transform: uppercase;
+        line-height: 1.4em;
+}
+
+.container-text1 p {
+    font-size: 19px;
+    margin-bottom: 20px;
+    font-family: monospace;
+}
+
+.container-text1 img {
+    max-width: 100%;
+    height: auto;
+}
+
+.container-text2{
+    width: 50%;
+}
+.container-text3{
+    width: 50%;
+}

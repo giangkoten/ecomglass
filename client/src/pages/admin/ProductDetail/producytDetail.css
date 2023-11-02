@@ -1,0 +1,29 @@
+.detailProduct_Admin {
+    height: 350px;
+    width: 350px;
+    background-size: contain;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background-repeat: no-repeat;
+}
+.detailProduct_Admin span {
+    font-size: 60px;
+    color: rgb(129, 200, 194);
+    transition: color 0.3s;
+  
+}
+.modalDetail{
+    display: flex;
+    width: 500px;
+    height: 550px ;
+    gap: 10px;
+    justify-content: center;
+}
+.modalDetail img {
+    object-fit: contain;
+    height: 200px;
+    width: 200px;
+}

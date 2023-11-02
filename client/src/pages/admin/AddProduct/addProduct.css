@@ -1,0 +1,9 @@
+.listImgCreateAdmin{
+    display: flex;
+    justify-content:flex-start;
+    gap : 5%
+}
+.imgCreateAdmin{
+    height: 200px;
+    width: 200px;
+}

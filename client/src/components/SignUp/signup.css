@@ -1,0 +1,145 @@
+
+.register-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* padding: 40px; */
+}
+
+.register-form1 {
+    width: 100%;
+    max-width: 550px;
+    height: auto;
+    object-fit: cover;
+}
+
+.register-form2 {
+    padding: 20px;
+    flex: 1;
+    max-width: 400px;
+    margin-left: 150px;
+}
+
+.register-form2 h1 {
+    color: black;
+    font-family:  Sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 1.5em;
+}
+
+.register-form2 p {
+    color: black;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.4em;
+}
+
+
+.ant-form {
+    max-width: 100%;
+}
+
+
+.ant-form-item {
+    margin-bottom: 20px;
+}
+
+
+.ant-form-item-label {
+    padding: 0;
+}
+
+
+.ant-input {
+    width: 100%;
+    margin-top: 1%;
+}
+
+
+
+.ant-btn {
+    width: 100%;
+    background-color: #81c8c2;
+    border-color: #81c8c2;
+}
+
+.ant-btn-primary {
+    margin-top: 10px;
+}
+
+
+/* .register-form2 p:last-child {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #888;
+} */
+
+.register-form3{
+    text-align: center;
+    color: black;
+}
+
+.register-form4{
+    height: 45px;
+        color: white;
+        font-weight: 700;
+        font-size: 17px;
+        border-radius: 50px;
+        border: none;
+}
+.register-form4:hover {
+    background-color: #ff0000;
+    color: white !important;
+    border: none;
+   
+}
+
+.register-form7{
+        height: 24px;
+        width: 24px;
+        vertical-align: top;
+        margin-right: 63px;
+}
+
+/* Style cho nút button chứa biểu tượng */
+.register-form5{
+    display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        width: 100%;
+        background-color: #1877F2;
+        border: 1px solid #ccc;
+        padding: 10px;
+        cursor: pointer;
+        border: none;
+        margin-bottom: 5%;
+        border-radius: 50px;
+        color: white;
+}
+.register-form6 {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50px; 
+    box-shadow: 0px 0px 3px 3px #f2f2f2;
+    margin-bottom: 5%;
+}
+
+.register-form5 i {
+    font-size: 20px;
+    margin-right: 57px;
+}
+
+
+.register-form5 b,
+.register-form6 b {
+    font-weight: bold;
+    margin-left: 5px
+}
+

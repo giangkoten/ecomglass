@@ -1,0 +1,235 @@
+.shop-product {
+    background-image: url(https://kinhmatanna.com//wp-content/uploads/2022/06/Rectangle-146.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 500px;
+    position: relative;
+}
+
+.shop-text {
+    padding: 3% 6%;
+}
+
+.shop-text h2 {
+    color: black;
+    font-family: "Montserrat", Sans-serif;
+    font-size: 35px;
+    font-weight: 600;
+    text-transform: uppercase;
+    line-height: 1.5em;
+}
+.shop-text p {
+    padding-right: 50%;
+    font-family: monospace;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.4em;
+}
+.shop-product h1 {
+    position: absolute;
+    top: 60%;
+    left: 11%;
+    color: white;
+    font-size: 50px;
+    font-weight: 600;
+    text-transform: uppercase;
+    line-height: 1.5em;
+    font-family: Montserrat;
+}
+
+.shop-kinhs {
+    /* padding: 0 10%; */
+    margin-bottom: 5%;
+}
+
+.shop-product1 {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4%;
+}
+
+.shop-product2 {
+    list-style: none;
+    margin-bottom: 3%;
+    text-align: center;
+    width: 249px;
+    height: 300px;
+
+}
+.shop-product2 img {
+    height: 80%;
+    width: 100%;
+    border-radius: 20px;
+    margin-bottom: 1%;
+}
+
+.shop-product3 {
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.5em;
+    cursor: pointer;
+}
+.shop-product4 {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.4em;
+}
+
+.product-carousel {
+    padding: 0 9%;
+    margin-bottom: 5%;
+}
+.product-carousel h1 {
+    font-family: "Montserrat", Sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    text-transform: uppercase;
+    line-height: 1.4em;
+    margin-left: 3%;
+    margin-bottom: 4%;
+}
+
+.product-carousel1 {
+    list-style: none;
+    padding: 0 14%;
+    text-align: center;
+}
+
+.product-carousel1 img {
+    height: 280px;
+    object-fit: cover;
+    width: 249px;
+    border-radius: 20px;
+    margin-bottom: 1%;
+}
+
+.product-new {
+    padding: 0 22%;
+    margin-bottom: 5%;
+}
+.product-new1 {
+    list-style: none;
+    padding: 0 10%;
+    text-align: center;
+}
+.product-one h1 {
+    font-family: "Montserrat", Sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    text-transform: uppercase;
+    line-height: 1.4em;
+    margin-bottom: 2%;
+}
+
+.product-new1 img {
+    height: 280px;
+    object-fit: cover;
+    width: 249px;
+    border-radius: 20px;
+    margin-bottom: 1%;
+}
+
+.product-img {
+    height: 330px;
+    object-fit: cover;
+    border-radius: 24px 24px 24px 24px;
+}
+/* ProductCarousel.css */
+.slick-arrow {
+    position: absolute;
+    top: 40%;
+    left: 100%;
+    width: 28px;
+    transform: translateY(-50%);
+    z-index: 1;
+    font-size: 20px;
+    color: white;
+    background-color: black;
+    border: none;
+    cursor: pointer;
+}
+
+.custom-next-arrow {
+    right: 0;
+}
+
+.custom-prev-arrow {
+    left: 0;
+}
+/* ---- */
+.row-2 {
+    display: flex;
+    flex-wrap: wrap; /* Cho phép các phần tử con tự động xuống dòng khi không đủ không gian */
+    gap: 20px; /* Khoảng cách giữa các phần tử con */
+    justify-content: space-between; /* Căn các phần tử con ra hai bên */
+  }
+  
+  /* Tùy chỉnh cho từng phần tử con */
+  .col-2 {
+    flex: 1; 
+    border-radius: 10px;
+    padding-left: 100px; /* Khoảng cách bên trong phần tử con */
+  }
+  
+  /* Tùy chỉnh cho các tiêu đề */
+  .col-2 h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  
+  /* Tùy chỉnh cho danh sách các mục */
+  .col-2 ul {
+    list-style: none;
+    padding: 0;
+    padding-bottom: 20px;
+  }
+  
+  /* Tùy chỉnh cho mục trong danh sách */
+  .col-2 li {
+    margin-bottom: 10px;
+    font-size: 18px;
+  }
+  
+  /* Tùy chỉnh cho checkbox */
+  .col-2 input[type="checkbox"] {
+    margin-right: 5px;
+    width: 15px;
+    height: 15px;
+  }
+  
+
+  .sale{
+    position: absolute;
+    top: 4%;
+    left: 6%;
+    color: white;
+    background-color: red;
+    border-radius: 10px;
+    width: 51px;
+    font-size: 13px;
+  }
+
+  .addtocart{
+    display: none;
+    position: absolute;
+    top: 35%;
+    left: 40%;
+    background-color: rgb(254, 59, 59);
+    color: white;
+    font-size: 14px;
+    width: 50px;
+    height: 40px;
+    padding: 10px;
+    border-radius: 7px;
+    cursor: pointer;
+  }
+
+  
+  .addimg:hover .addtocart {
+    display: block;
+  }
+  .shop-product2:hover img {
+    filter: blur(1px); 
+  }
