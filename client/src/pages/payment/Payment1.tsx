@@ -2,8 +2,11 @@ import "./payment.css";
 import { useSelector } from "react-redux";
 import { formatMoney } from "../../helps/formatMoney";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const Payment1 = () => {
+  const navigate = useNavigate();
   //Get All
   const listProductBuy = useSelector((state: any) => state.cart);
   //Tổng tiền
@@ -20,6 +23,14 @@ const Payment1 = () => {
       .post("http://localhost:8080/api/v1/order", listCart)
       .then(() => {
         localStorage.removeItem("cart");
+        Swal.fire(
+          "Thanh toán thành công",
+          "You clicked the button!",
+          "success"
+        );
+        setTimeout(() => {
+          navigate("/");
+        }, 2500);
       })
       .catch((err) => {
         console.log("Lỗi khi thanh toán: " + err);

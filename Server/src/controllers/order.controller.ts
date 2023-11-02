@@ -1,3 +1,4 @@
+import { log } from "console";
 import * as orderService from "../services/order.service";
 import { Request, Response } from "express";
 export const createOrder = async (req: Request, res: Response) => {
@@ -45,6 +46,40 @@ export const getAllOrderByUser = async (req: Request, res: Response) => {
     const transformedData = Object.values(groupedData);
     res.json({
       data: transformedData,
+    });
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const updatePayment = async (req: Request, res: Response) => {
+  try {
+    const { id } = req.params;
+    const [row]: any = await orderService.updatePayment(+id);
+    res.json({
+      message: `Upload successfully`,
+    });
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const getAllOrder = async (req: Request, res: Response) => {
+  try {
+    const [row]: any = await orderService.getAllOrder();
+    const groupedData = row.reduce((result: any, obj: any) => {
+      const order_cart_id = obj.order_cart_id;
+      if (!result[order_cart_id]) {
+        result[order_cart_id] = [];
+      }
+      result[order_cart_id].push(obj);
+      return result;
+    }, {});
+
+    const groupedArray = Object.values(groupedData);
+    res.json({
+      message: "get all order",
+      data: groupedArray,
     });
   } catch (error) {
     console.log(error);

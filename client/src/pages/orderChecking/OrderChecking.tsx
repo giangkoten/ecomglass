@@ -4,10 +4,13 @@ import "./orderChecking.css";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { formatMoney } from "../../helps/formatMoney";
+import { Modal } from "antd";
 
 const OrderChecking = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const [listOrder, setListOrder] = useState([]);
   const id = JSON.parse(localStorage.getItem("idUser") as any);
+  const [idOrder, setIdOrder] = useState() as any;
 
   const loadOrder = () => {
     axios
@@ -15,7 +18,18 @@ const OrderChecking = () => {
       .then((res) => setListOrder(res.data.data))
       .catch((err) => console.log(err));
   };
+  //payment
+  const showModal: any = () => {
+    setIsModalOpen(true);
+  };
 
+  const handleOk = () => {
+    setIsModalOpen(false);
+  };
+
+  const handleCancel = () => {
+    setIsModalOpen(false);
+  };
   useEffect(() => {
     loadOrder();
   }, []);
@@ -24,6 +38,18 @@ const OrderChecking = () => {
     return group.reduce((total: any, e: any) => total + e.price, 0);
   };
 
+  const handleUpdatePayment = (e: any) => {
+    setIdOrder(e);
+    setIsModalOpen(true);
+  };
+  const handleSubmitOrder = () => {
+    axios
+      .put(`http://localhost:8080/api/v1/order/${idOrder}`)
+      .then((res) => {
+        loadOrder(), setIsModalOpen(false);
+      })
+      .catch((err) => console.log(err));
+  };
   return (
     <>
       <Header />
@@ -31,7 +57,7 @@ const OrderChecking = () => {
         {listOrder.length > 0 &&
           listOrder.map((group: any, groupIndex: any) => (
             <div key={groupIndex}>
-              <h5>Ngày đặt lịch</h5>
+              <h5>Ngày đặt hàng</h5>
               <span>{group[0].orderDate}</span>
               <h6>
                 Tổng giá tiền :{" "}
@@ -39,9 +65,17 @@ const OrderChecking = () => {
               </h6>
               <h6>
                 Trạng thái đơn hàng:{" "}
-                {group[0].status === 0 ? (
-                  <button type="button" className="btn btn-warning">
+                {group[0].status === 2 ? (
+                  <button
+                    type="button"
+                    className="btn btn-danger"
+                    onClick={() => handleUpdatePayment(group[0].order_cart_id)}
+                  >
                     Chưa thanh toán
+                  </button>
+                ) : group[0].status === 0 ? (
+                  <button type="button" className="btn btn-warning">
+                    Chờ xử lý
                   </button>
                 ) : (
                   <button type="button" className="btn btn-primary">
@@ -80,6 +114,33 @@ const OrderChecking = () => {
           ))}
       </div>
       <Footer />
+      <Modal
+        title="Thêm thông tin thanh toán"
+        open={isModalOpen}
+        onOk={handleOk}
+        onCancel={handleCancel}
+        footer={null}
+      >
+        <>
+          <div className="mb-3">
+            <label className="form-label">Địa chỉ nhà</label>
+            <input type="text" className="form-control" />
+          </div>
+          <div className="mb-3">
+            <label className="form-label">Số điện thoại</label>
+            <input type="text" className="form-control" />
+          </div>
+          <div className="mb-3 text-center">
+            <button
+              type="button"
+              className="btn btn-primary"
+              onClick={handleSubmitOrder}
+            >
+              Xác nhận
+            </button>
+          </div>
+        </>
+      </Modal>
     </>
   );
 };

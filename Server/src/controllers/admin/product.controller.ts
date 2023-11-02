@@ -95,3 +95,15 @@ export const createMedia = async (req: Request, res: Response) => {
     console.log(error);
   }
 };
+
+export const updateOrder = async (req: Request, res: Response) => {
+  try {
+    const { id } = req.params;
+    await productService.updateOrder(+id);
+    res.json({
+      message: `Update order by id = ${id}`,
+    });
+  } catch (error) {
+    console.log(error);
+  }
+};

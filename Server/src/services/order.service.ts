@@ -50,3 +50,17 @@ export const getAllOrderByUser = async (id: number) => {
     [id]
   );
 };
+
+export const updatePayment = async (id: number) => {
+  return db.execute(
+    `UPDATE ecomglass.order_cart SET status = '0' WHERE (order_cart_id = ?)
+  `,
+    [id]
+  );
+};
+
+export const getAllOrder = async () => {
+  return db.execute(`SELECT  o.userId , o.detailId, o.numberBuy, o.nameGlass, o.price, o.orderDate, oc.order_cart_id, oc.status, u.username FROM ecomGlass.order as o 
+  INNER JOIN order_cart as oc ON o.order_cart_id = oc.order_cart_id
+  INNER JOIN users as u ON o.userId = u.userId`);
+};

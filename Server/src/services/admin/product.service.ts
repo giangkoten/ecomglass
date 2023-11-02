@@ -62,3 +62,11 @@ export const createMedia = async (mediaList: any, insertId: number) => {
     [insertId, mediaList[0], mediaList[1], mediaList[2], mediaList[3]]
   );
 };
+
+export const updateOrder = async (id: number) => {
+  return db.execute(
+    `UPDATE ecomglass.order_cart SET status = '1' WHERE (order_cart_id = ?)
+  `,
+    [id]
+  );
+};

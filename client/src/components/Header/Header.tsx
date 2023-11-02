@@ -53,7 +53,7 @@ const Header = () => {
         <p>Hành trình tử tế</p>
         <p>Về Anna</p>
         <p>Blog</p>
-        <p>Order Checking</p>
+        <p onClick={() => navigate("/orderCheck")}>Order Checking</p>
         <p>Store</p>
       </div>
       <div className="icon-header">

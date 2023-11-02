@@ -26,7 +26,7 @@ const SideBar = () => {
           </li>
           <li className="px-4 py-2 h5">
             <Link
-              to="/admin/orders"
+              to="/admin/orderAdmin"
               className="text-white text-decoration-none"
             >
               <i className="fa-solid fa-cart-shopping me-3"></i>

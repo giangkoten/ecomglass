@@ -16,6 +16,7 @@ import ProductAdmin from "./pages/admin/ProductAmin/ProductAdmin";
 import ProductDetail from "./pages/admin/ProductDetail/ProductDetail";
 import AddProduct from "./pages/admin/AddProduct/AddProduct";
 import OrderChecking from "./pages/orderChecking/OrderChecking";
+import OrderAdmin from "./pages/admin/OderAdmin/OrderAdmin";
 function App() {
   return (
     <>
@@ -55,6 +56,9 @@ function App() {
           </Route>
           <Route path="addProduct">
             <Route index element={<AddProduct />} />
+          </Route>
+          <Route path="orderAdmin">
+            <Route index element={<OrderAdmin />} />
           </Route>
         </Route>
       </Routes>
