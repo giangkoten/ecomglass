@@ -70,3 +70,14 @@ export const updateOrder = async (id: number) => {
     [id]
   );
 };
+
+export const deleteQuantity = async (id: number) => {
+  return db.execute(
+    `UPDATE ecomglass.detail AS d
+  JOIN ecomglass.order AS o ON d.detailId = o.detailId
+  JOIN ecomglass.order_cart AS oc ON o.order_cart_id = oc.order_cart_id
+  SET d.quantity = d.quantity - o.numberBuy
+  WHERE o.detailId = ?`,
+    [id]
+  );
+};

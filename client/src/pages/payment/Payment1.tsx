@@ -4,8 +4,10 @@ import { formatMoney } from "../../helps/formatMoney";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
+import { useDispatch } from "react-redux";
 
 const Payment1 = () => {
+  let dispatch = useDispatch();
   const navigate = useNavigate();
   //Get All
   const listProductBuy = useSelector((state: any) => state.cart);
@@ -23,11 +25,8 @@ const Payment1 = () => {
       .post("http://localhost:8080/api/v1/order", listCart)
       .then(() => {
         localStorage.removeItem("cart");
-        Swal.fire(
-          "Thanh toán thành công",
-          "You clicked the button!",
-          "success"
-        );
+        dispatch({ type: "CLEAR_CART" });
+        Swal.fire("Thanh toán thành công", "Tiếp tục mua sắm", "success");
         setTimeout(() => {
           navigate("/");
         }, 2500);

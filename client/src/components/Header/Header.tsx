@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./header.css";
 import { Avatar, Badge } from "antd";
 import { useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useEffect } from "react";
 
@@ -74,14 +74,14 @@ const Header = () => {
           ></i>
         )}
 
-        <a href="#">
+        <Link to="/cart">
           <Badge count={totalClickNumber}>
             <i
               className="fa-sharp fa-solid fa-cart-shopping"
               style={{ color: "black", fontSize: "25px" }}
             ></i>
           </Badge>
-        </a>
+        </Link>
       </div>
     </div>
   );

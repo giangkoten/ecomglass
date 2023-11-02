@@ -192,6 +192,7 @@ const Store = () => {
                                 ? "2px solid black"
                                 : "none",
                           }}
+                          disabled={e.quantity == 0}
                           onClick={() => handleOptionColor(e)}
                         ></Button>
                       </Tooltip>

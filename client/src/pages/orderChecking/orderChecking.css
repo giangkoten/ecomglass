@@ -4,3 +4,10 @@
     border-radius: 50%;
     border: none;
 }
+.orderCheckingFail{
+    font-size: 35px;
+    height: 300px;
+    line-height: 300px;
+    color: #81c8c2;
+    font-style: italic;
+}

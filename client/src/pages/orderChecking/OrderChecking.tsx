@@ -54,7 +54,7 @@ const OrderChecking = () => {
     <>
       <Header />
       <div className="container">
-        {listOrder.length > 0 &&
+        {listOrder.length > 0 ? (
           listOrder.map((group: any, groupIndex: any) => (
             <div key={groupIndex}>
               <h5>Ngày đặt hàng</h5>
@@ -111,7 +111,12 @@ const OrderChecking = () => {
                 </tbody>
               </table>
             </div>
-          ))}
+          ))
+        ) : (
+          <h4 className="text-center orderCheckingFail">
+            Bạn chưa mua sản phẩm, bắt đầu mua hàng.
+          </h4>
+        )}
       </div>
       <Footer />
       <Modal

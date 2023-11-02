@@ -14,9 +14,11 @@ const OrderAdmin = () => {
   useEffect(() => {
     loadOrder();
   }, []);
-  const handleUpdateStatus = (id: any) => {
+  const handleUpdateStatus = (e: any) => {
+    console.log(e);
+
     axios
-      .put(`http://localhost:8080/api/v1/admin/order/${id}`)
+      .put(`http://localhost:8080/api/v1/admin/order/${e.order_cart_id}`)
       .then((res) => {
         toast.success("Đã xác nhận thanh toán", {
           position: "top-center",
@@ -28,9 +30,13 @@ const OrderAdmin = () => {
           progress: undefined,
           theme: "light",
         });
-        loadOrder();
       })
       .catch((err) => console.log(err));
+    axios
+      .put(`http://localhost:8080/api/v1/admin/deleteQuantity/${e.detailId}`)
+      .then((res) => console.log(res))
+      .catch((err) => console.log(err));
+    loadOrder();
   };
   return (
     <>
@@ -73,9 +79,7 @@ const OrderAdmin = () => {
                       <button
                         type="button"
                         className="btn btn-warning"
-                        onClick={() =>
-                          handleUpdateStatus(group[0].order_cart_id)
-                        }
+                        onClick={() => handleUpdateStatus(group[0])}
                       >
                         Chờ xử lý
                       </button>

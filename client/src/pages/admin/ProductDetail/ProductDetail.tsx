@@ -56,10 +56,17 @@ const ProductDetail = () => {
                 {detailProduct &&
                   detailProduct.options &&
                   detailProduct.options.map((e: any, i: any) => (
-                    <tr>
+                    <tr
+                      className={
+                        e.quantity === 0 ? "bg-secondary text-white" : ""
+                      }
+                      key={i}
+                    >
                       <th scope="row">{i + 1}</th>
                       <td>{e.color}</td>
-                      <td>{e.quantity}</td>
+                      <td>
+                        {e.quantity === 0 ? <span>Hết hàng</span> : e.quantity}
+                      </td>
                       <td>{e.rgb}</td>
                     </tr>
                   ))}

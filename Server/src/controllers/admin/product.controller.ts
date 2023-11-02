@@ -107,3 +107,15 @@ export const updateOrder = async (req: Request, res: Response) => {
     console.log(error);
   }
 };
+
+export const deleteQuantity = async (req: Request, res: Response) => {
+  try {
+    const { id } = req.params;
+    await productService.deleteQuantity(+id);
+    res.json({
+      message: `Update quantity successfully`,
+    });
+  } catch (error) {
+    console.log(error);
+  }
+};
