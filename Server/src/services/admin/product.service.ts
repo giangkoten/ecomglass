@@ -81,3 +81,11 @@ export const deleteQuantity = async (id: number) => {
     [id]
   );
 };
+
+export const deleteOne = async (id: number) => {
+  return db.execute(
+    `DELETE FROM ecomglass.glasses WHERE (glassId = ?)
+  `,
+    [id]
+  );
+};

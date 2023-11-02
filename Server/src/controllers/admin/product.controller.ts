@@ -119,3 +119,15 @@ export const deleteQuantity = async (req: Request, res: Response) => {
     console.log(error);
   }
 };
+
+export const deleteOne = async (req: Request, res: Response) => {
+  try {
+    const { id } = req.params;
+    await productService.deleteOne(+id);
+    res.json({
+      message: `Delete glass successfully`,
+    });
+  } catch (error) {
+    console.log(error);
+  }
+};

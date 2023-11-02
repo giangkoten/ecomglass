@@ -1,9 +1,10 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { formatMoney } from "../../../helps/formatMoney";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Modal, Select } from "antd";
 import { ToastContainer, toast } from "react-toastify";
+import Swal from "sweetalert2";
 
 const ProductAdmin = () => {
   const navigate = useNavigate();
@@ -88,7 +89,22 @@ const ProductAdmin = () => {
   const handleAddProduct = () => {
     navigate("/admin/addProduct");
   };
-
+  //Xóa
+  const handleDeleteGlass = (id: number) => {
+    axios
+      .delete(`http://localhost:8080/api/v1/admin/deleteGlass/${id}`)
+      .then(() => {
+        Swal.fire({
+          position: "center",
+          icon: "success",
+          title: "Xóa sản phẩm thành công",
+          showConfirmButton: false,
+          timer: 1500,
+        }),
+          loadGlasses();
+      })
+      .catch((err) => console.log(err));
+  };
   // Phân trang
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
@@ -175,7 +191,11 @@ const ProductAdmin = () => {
                     >
                       <i className="fa-regular fa-pen-to-square"></i>
                     </button>
-                    <button type="button" className="btn btn-danger">
+                    <button
+                      type="button"
+                      className="btn btn-danger"
+                      onClick={() => handleDeleteGlass(e.glassId)}
+                    >
                       <i className="fa-regular fa-trash-can"></i>
                     </button>
                   </td>
@@ -192,13 +212,13 @@ const ProductAdmin = () => {
                   number === currentPage ? "active" : ""
                 }`}
               >
-                <a
-                  href="#"
+                <Link
+                  to="/admin/products"
                   className="page-link"
                   onClick={() => setCurrentPage(number)}
                 >
                   {number}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>

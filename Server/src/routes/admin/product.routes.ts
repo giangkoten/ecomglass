@@ -8,6 +8,7 @@ import {
   createMedia,
   updateOrder,
   deleteQuantity,
+  deleteOne,
 } from "../../controllers/admin/product.controller";
 
 const router = Router();
@@ -19,8 +20,8 @@ router.post("/", creatOne);
 router.post("/postDetail", createDetail);
 router.post("/postMedia", createMedia);
 router.put("/order/:id", updateOrder);
-
 router.put("/deleteQuantity/:id", deleteQuantity);
+router.delete("/deleteGlass/:id", deleteOne);
 
 //upload IMg
 
