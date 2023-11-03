@@ -29,10 +29,15 @@ const Header = () => {
   }, []);
   const handleLogOut = () => {
     localStorage.removeItem("idUser");
+    navigate("/");
+    window.localStorage.href("/");
     loadUser();
   };
   const handleToShop = () => {
     navigate("/shop");
+  };
+  const handleToHomePage = () => {
+    navigate("/");
   };
   return (
     <div className="header">
@@ -48,7 +53,7 @@ const Header = () => {
         </a>
       </div>
       <div className="menu-header">
-        <p>Trang chủ</p>
+        <p onClick={handleToHomePage}>Trang chủ</p>
         <p onClick={handleToShop}>Sản phẩm</p>
         <p>Hành trình tử tế</p>
         <p>Về Anna</p>
